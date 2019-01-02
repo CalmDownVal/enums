@@ -1,0 +1,29 @@
+{
+	"name": "@calmdownval/enums",
+	"version": "1.0.1",
+	"license": "MIT",
+	"description": "enum-like object utilities",
+	"main": "index.mjs",
+	"keywords": [
+		"enum",
+		"enumeration",
+		"helper",
+		"utility"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vaclavlahuta/enums.git"
+	},
+	"engines": {
+		"node": ">=8.15.0"
+	},
+	"devDependencies": {
+		"benchmark": "^2.1.4",
+		"microtime": "^2.1.8",
+		"mocha": "^5.2.0",
+		"glob": "^7.1.3"
+	},
+	"scripts": {
+		"test": "NODE_OPTIONS=\"--experimental-modules\" mocha --delay test.esm.js"
+	}
+}

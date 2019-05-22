@@ -1,13 +1,12 @@
-export function parse(_enum, str)
+export function parse(Enum, str)
 {
-	const
-		hint = str.trim().toUpperCase(),
-		length = hint.length;
+	const hint = str.trim().toUpperCase();
+	const length = hint.length;
 
-	let match = null,
-		count = 0;
+	let candidate = null;
+	let count = 0;
 
-	for (const key in _enum)
+	for (const key in Enum)
 	{
 		if (key.length < length)
 		{
@@ -16,25 +15,24 @@ export function parse(_enum, str)
 
 		if (key.toUpperCase().indexOf(hint) !== -1)
 		{
-			match = _enum[key];
-
+			candidate = Enum[key];
 			if (key.length === length) // exact match
 			{
-				return match;
+				return candidate;
 			}
 
 			++count;
 		}
 	}
 
-	return count === 1 ? match : null;
+	return count === 1 ? candidate : null;
 }
 
-export function stringify(_enum, value)
+export function stringify(Enum, value)
 {
-	for (const key in _enum)
+	for (const key in Enum)
 	{
-		if (_enum[key] === value)
+		if (Enum[key] === value)
 		{
 			return key;
 		}
@@ -42,11 +40,11 @@ export function stringify(_enum, value)
 	return null;
 }
 
-export function coerce(_enum, value)
+export function coerce(Enum, value)
 {
-	for (const key in _enum)
+	for (const key in Enum)
 	{
-		if (_enum[key] === value)
+		if (Enum[key] === value)
 		{
 			return value;
 		}
@@ -55,12 +53,12 @@ export function coerce(_enum, value)
 	return null;
 }
 
-export function match(_enum, hint)
+export function match(Enum, hint)
 {
-	let result = coerce(_enum, hint);
+	let result = coerce(Enum, hint);
 	if (result === null && typeof hint === 'string')
 	{
-		result = parse(_enum, hint);
+		result = parse(Enum, hint);
 	}
 
 	return result;

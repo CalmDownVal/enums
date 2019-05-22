@@ -1,4 +1,6 @@
 test
+script
 .vscode
 .eslintrc.json
-test.esm.json
+.gitignore
+*.md

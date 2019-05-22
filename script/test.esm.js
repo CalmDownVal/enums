@@ -1,3 +1,5 @@
+/* eslint-env mocha */
+
 /* This is a test runner to support Node's native ES modules
  * with Mocha while they're still in experimental state.
  *
@@ -9,10 +11,6 @@ const { sync : globSync } = require('glob');
 
 (async () =>
 {
-	const matches = globSync('./test/**/*.spec.mjs');
-	for (const match of matches)
-	{
-		await import(match);
-	}
+	await Promise.all( globSync('test/*.mjs').map(match => import( '../' + match )) );
 	run();
 })();

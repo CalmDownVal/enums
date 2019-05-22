@@ -26,13 +26,13 @@ npm i @calmdownval/enums
 ```
 
 ## Functions
-- `stringify(_enum, value)`  
+- `stringify(Enum, value)`  
 Returns the key of the enum (string) to which the value corresponds or null if the enum does not contain the value.
-- `parse(_enum, str)`  
+- `parse(Enum, str)`  
 Returns the value of the best matching member of the enum. Exact match is always preferred. The lookup is *case insensitive*.
-- `coerce(_enum, value)`  
+- `coerce(Enum, value)`  
 Checks if value is a member of the enumeration. If so returns it, otherwise returns null.
-- `match(_enum, hint)`  
+- `match(Enum, hint)`  
 Similar to coerce, except if hint is a string and is not a member of the enumeration parsing is attempted.
 
 
@@ -50,7 +50,7 @@ const Enum =
 enums.stringify(Enum, Enum.ITEM_ONE);
 
 // returns 2
-enums.parse(Enum, "TWO");
+enums.parse(Enum, 'TWO');
 ```
 
 ## Testing

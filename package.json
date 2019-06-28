@@ -19,10 +19,11 @@
 		"node": ">=8.15.0"
 	},
 	"devDependencies": {
+		"cross-env": "^5.2.0",
 		"mocha": "^6.1.4",
 		"glob": "^7.1.4"
 	},
 	"scripts": {
-		"test": "NODE_OPTIONS=\"--experimental-modules\" mocha --delay script/test.esm.js"
+		"test": "cross-env NODE_OPTIONS=\"--experimental-modules\" mocha --delay script/test.esm.js"
 	}
 }

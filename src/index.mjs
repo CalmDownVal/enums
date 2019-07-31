@@ -37,6 +37,7 @@ export function stringify(Enum, value)
 			return key;
 		}
 	}
+
 	return null;
 }
 

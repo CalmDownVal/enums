@@ -1,8 +1,9 @@
 {
 	"name": "@calmdownval/enums",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"type": "module",
-	"main": "index.mjs",
+	"main": "src/index.mjs",
+	"typings": "src/index.d.ts",
 	"license": "MIT",
 	"description": "enum-like object utilities",
 	"keywords": [
@@ -20,7 +21,7 @@
 	},
 	"devDependencies": {
 		"cross-env": "^5.2.0",
-		"mocha": "^6.1.4",
+		"mocha": "^6.2.0",
 		"glob": "^7.1.4"
 	},
 	"scripts": {

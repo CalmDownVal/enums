@@ -26,14 +26,17 @@ npm i @calmdownval/enums
 ```
 
 ## Functions
-- `stringify(Enum, value)`  
-Returns the key of the enum (string) to which the value corresponds or null if the enum does not contain the value.
 - `parse(Enum, str)`  
-Returns the value of the best matching member of the enum. Exact match is always preferred. The lookup is *case insensitive*.
+Returns the value of the best matching member of the enum. Exact match is always preferred.
+The lookup is *case insensitive*. Returns null when no suitable match is found.
+- `stringify(Enum, value)`  
+Returns the key of the enum to which the value corresponds or null if the enum does not contain
+the value.
 - `coerce(Enum, value)`  
-Checks if value is a member of the enumeration. If so returns it, otherwise returns null.
+Checks if value is a member of the enumeration. If so returns it, returns null otherwise.
 - `match(Enum, hint)`  
-Similar to coerce, except if hint is a string and is not a member of the enumeration parsing is attempted.
+Similar to coerce, except if `hint` is a string and is not a member of the enumeration parsing
+is attempted. Handy when dealing with user input.
 
 
 ## Example
@@ -46,10 +49,10 @@ const Enum =
     ITEM_TWO : 2
 };
 
-// returns "ITEM_ONE"
+// returns 'ITEM_ONE'
 enums.stringify(Enum, Enum.ITEM_ONE);
 
-// returns 2
+// returns 2 (value of Enum.ITEM_TWO)
 enums.parse(Enum, 'TWO');
 ```
 

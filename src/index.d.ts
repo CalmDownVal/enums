@@ -1,4 +1,4 @@
-export namespace EnumUtils
+declare namespace EnumUtils
 {
 	type EnumValue = number | string
 	type EnumLike = { [key: string]: EnumValue }
@@ -35,3 +35,5 @@ export namespace EnumUtils
 	 */
 	export function match(Enum: EnumLike, hint: any): EnumValue | null;
 }
+
+export = EnumUtils;
